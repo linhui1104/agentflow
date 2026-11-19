@@ -1,0 +1,95 @@
+{
+  "id": "gen-3553",
+  "name": "会议纪要转行动周报",
+  "description": "解析会议记录，抽取行动项并生成周报，经质量验证与条件修正循环后输出。",
+  "nodes": [
+    {
+      "id": "parse",
+      "type": "agent",
+      "agent_id": "parser",
+      "config": {
+        "input_template": "请解析以下会议记录，输出结构化要点：\n{task}",
+        "max_visits": 3
+      },
+      "next": [
+        "draft"
+      ]
+    },
+    {
+      "id": "draft",
+      "type": "agent",
+      "agent_id": "planner",
+      "config": {
+        "input_template": "基于以下会议要点生成行动清单，并同步整理周报素材：\n{parse}",
+        "max_visits": 3
+      },
+      "next": [
+        "write"
+      ]
+    },
+    {
+      "id": "write",
+      "type": "agent",
+      "agent_id": "reporter",
+      "config": {
+        "input_template": "基于会议要点与行动清单撰写周报：\n会议要点：{parse}\n行动清单：{draft}",
+        "max_visits": 3
+      },
+      "next": [
+        "check"
+      ]
+    },
+    {
+      "id": "check",
+      "type": "verify",
+      "agent_id": null,
+      "config": {
+        "target": "write",
+        "verify_threshold": 7,
+        "max_rounds": 3,
+        "max_visits": 3
+      },
+      "next": [
+        "decide"
+      ]
+    },
+    {
+      "id": "decide",
+      "type": "condition",
+      "agent_id": null,
+      "config": {
+        "condition": "verify_score>=7",
+        "target": "check",
+        "max_visits": 3
+      },
+      "next": [
+        "finalize",
+        "revise"
+      ]
+    },
+    {
+      "id": "revise",
+      "type": "agent",
+      "agent_id": "reporter",
+      "config": {
+        "input_template": "根据审核意见修订周报与行动清单。\n审核意见：{check}\n原周报：{write}\n行动清单：{draft}",
+        "max_visits": 3
+      },
+      "next": [
+        "check"
+      ]
+    },
+    {
+      "id": "finalize",
+      "type": "agent",
+      "agent_id": "planner",
+      "config": {
+        "input_template": "整合最终行动清单与周报，输出交付版：\n行动清单：{draft}\n周报：{write}",
+        "max_visits": 3
+      },
+      "next": []
+    }
+  ],
+  "entry": "parse",
+  "version": 1
+}

@@ -1,0 +1,74 @@
+{
+  "id": "gen-3166",
+  "name": "种草转知乎",
+  "description": "将小红书种草笔记改写为知乎专业回答，并经过事实核查与质量验证的循环修正流程。",
+  "nodes": [
+    {
+      "id": "research",
+      "type": "agent",
+      "agent_id": "researcher",
+      "config": {
+        "input_template": "请对以下小红书种草笔记进行事实核查：{task}",
+        "tools": [
+          "search_web"
+        ],
+        "max_visits": 3
+      },
+      "next": [
+        "rewrite"
+      ]
+    },
+    {
+      "id": "rewrite",
+      "type": "agent",
+      "agent_id": "rewriter",
+      "config": {
+        "input_template": "请根据事实核查报告和原始笔记，改写为知乎专业回答。原始笔记：{task}；事实核查报告：{research}",
+        "verify_threshold": 7,
+        "max_rounds": 3,
+        "max_visits": 3
+      },
+      "next": [
+        "verify_rewrite"
+      ]
+    },
+    {
+      "id": "verify_rewrite",
+      "type": "verify",
+      "agent_id": null,
+      "config": {
+        "target": "rewrite",
+        "max_visits": 3
+      },
+      "next": [
+        "check_score"
+      ]
+    },
+    {
+      "id": "check_score",
+      "type": "condition",
+      "agent_id": null,
+      "config": {
+        "condition": "verify_score>=7",
+        "target": "verify_rewrite",
+        "max_visits": 3
+      },
+      "next": [
+        "end",
+        "rewrite"
+      ]
+    },
+    {
+      "id": "end",
+      "type": "agent",
+      "agent_id": "rewriter",
+      "config": {
+        "input_template": "请输出最终版的知乎专业回答。原始笔记：{task}；事实核查报告：{research}；上一轮改写结果：{rewrite}；质量审核意见：{verify_rewrite}",
+        "max_visits": 3
+      },
+      "next": []
+    }
+  ],
+  "entry": "research",
+  "version": 1
+}

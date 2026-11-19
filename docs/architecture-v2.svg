@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+  <defs>
+    <style>
+      text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .title { font-size: 21px; font-weight: bold; fill: #1e293b; }
+      .layer { font-size: 12.5px; font-weight: bold; }
+      .b { font-size: 12.5px; fill: #1e293b; }
+      .s { font-size: 10.5px; fill: #64748b; }
+      .tiny { font-size: 9.5px; fill: #64748b; }
+      .edge-label { font-size: 10px; fill: #475569; font-weight: bold; }
+      .marker { fill: #6366f1; }
+    </style>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="5" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" class="marker"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="760" fill="#ffffff"/>
+  <text x="640" y="32" text-anchor="middle" class="title">AgentFlow 平台 · 异构多模型协同调度架构</text>
+
+  <!-- ══════ L1 总控层 ══════ -->
+  <rect x="60" y="52" width="1160" height="86" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="80" y="76" class="layer" fill="#4338ca">L1 总控层 · DeepSeek 总控 Agent</text>
+  <rect x="100" y="86" width="210" height="40" rx="8" fill="#fff" stroke="#c7d2fe"/>
+  <text x="205" y="103" text-anchor="middle" class="b">审查用户任务</text>
+  <text x="205" y="118" text-anchor="middle" class="s">更高效、更清晰地下发</text>
+  <rect x="330" y="86" width="210" height="40" rx="8" fill="#fff" stroke="#c7d2fe"/>
+  <text x="435" y="103" text-anchor="middle" class="b">统一管理 API</text>
+  <text x="435" y="118" text-anchor="middle" class="s">各 agent 只干本职</text>
+  <rect x="560" y="86" width="210" height="40" rx="8" fill="#fff" stroke="#c7d2fe"/>
+  <text x="665" y="103" text-anchor="middle" class="b">定期检查日志</text>
+  <text x="665" y="118" text-anchor="middle" class="s">停滞检测 · 故障上报</text>
+  <rect x="790" y="86" width="210" height="40" rx="8" fill="#fff" stroke="#c7d2fe"/>
+  <text x="895" y="103" text-anchor="middle" class="b">最终裁决「一锤定音」</text>
+  <text x="895" y="118" text-anchor="middle" class="s">量化阈值 + 规则兜底</text>
+  <rect x="1020" y="86" width="180" height="40" rx="8" fill="#fff" stroke="#c7d2fe"/>
+  <text x="1110" y="103" text-anchor="middle" class="b">审查归档分类</text>
+  <text x="1110" y="118" text-anchor="middle" class="s">形成任务经验库</text>
+
+  <!-- 箭头 L1→L2 -->
+  <path d="M640 138 L640 166" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="652" y="156" class="edge-label">任务下发</text>
+
+  <!-- ══════ L2 调度层 ══════ -->
+  <rect x="60" y="168" width="1160" height="96" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="80" y="192" class="layer" fill="#b45309">L2 调度层</text>
+  <rect x="100" y="200" width="330" height="52" rx="8" fill="#fff" stroke="#fcd34d"/>
+  <text x="265" y="218" text-anchor="middle" class="b">GLM · 提示词整理分类</text>
+  <text x="265" y="236" text-anchor="middle" class="s">按任务特点归类 → 匹配最佳提示词模板</text>
+  <rect x="455" y="200" width="400" height="52" rx="8" fill="#fff" stroke="#fcd34d"/>
+  <text x="655" y="218" text-anchor="middle" class="b">能力画像调度器 ★</text>
+  <text x="655" y="236" text-anchor="middle" class="s">了解下属 Agent 特点 → 动态分配（69%/30%/1% 可调参数）</text>
+  <rect x="880" y="200" width="320" height="52" rx="8" fill="#fff" stroke="#fcd34d"/>
+  <text x="1040" y="218" text-anchor="middle" class="b">运维保障（Gemini 可选）</text>
+  <text x="1040" y="236" text-anchor="middle" class="s">整体架构运维 · 停滞时由备用 Agent 顶替</text>
+
+  <!-- 箭头 L2→L3 -->
+  <path d="M265 252 L265 282" stroke="#f59e0b" stroke-width="2" marker-end="url(#arr)"/>
+  <path d="M655 252 L655 282" stroke="#f59e0b" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="670" y="270" class="edge-label">按画像分配</text>
+
+  <!-- ══════ L3 执行层 ══════ -->
+  <rect x="60" y="284" width="1160" height="130" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="80" y="308" class="layer" fill="#15803d">L3 执行层 · 专用 Agent 团队（各 Agent 同时运行 · 职能隔离）</text>
+  <rect x="100" y="318" width="310" height="80" rx="8" fill="#fff" stroke="#86efac"/>
+  <text x="255" y="338" text-anchor="middle" class="b">✍ 文字模块</text>
+  <text x="255" y="356" text-anchor="middle" class="s">正文撰写 · 文案润色</text>
+  <text x="255" y="376" text-anchor="middle" class="tiny">主力 GLM · 备选 Kimi（通义千问）</text>
+  <rect x="430" y="318" width="310" height="80" rx="8" fill="#fff" stroke="#86efac"/>
+  <text x="585" y="338" text-anchor="middle" class="b">🖼 视觉模块</text>
+  <text x="585" y="356" text-anchor="middle" class="s">配图生成 · 版式设计</text>
+  <text x="585" y="376" text-anchor="middle" class="tiny">主力通义千问 · 备选文心一言</text>
+  <rect x="760" y="318" width="310" height="80" rx="8" fill="#fff" stroke="#86efac"/>
+  <text x="915" y="338" text-anchor="middle" class="b">📊 图表模块</text>
+  <text x="915" y="356" text-anchor="middle" class="s">数据可视化 · 图表生成</text>
+  <text x="915" y="376" text-anchor="middle" class="tiny">主力 MiniMax · 备选文心一言</text>
+  <rect x="1090" y="318" width="110" height="80" rx="8" fill="#fff" stroke="#86efac"/>
+  <text x="1145" y="345" text-anchor="middle" class="b">…</text>
+  <text x="1145" y="363" text-anchor="middle" class="s">可扩展</text>
+  <text x="1145" y="381" text-anchor="middle" class="tiny">动态注册</text>
+
+  <!-- ══════ L4 支撑层 ══════ -->
+  <rect x="60" y="432" width="1160" height="76" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="80" y="456" class="layer" fill="#475569">L4 平台支撑层（AgentFlow 平台能力）</text>
+  <rect x="100" y="464" width="250" height="34" rx="7" fill="#fff" stroke="#cbd5e1"/>
+  <text x="225" y="485" text-anchor="middle" class="b">知识库（RAG）</text>
+  <rect x="370" y="464" width="280" height="34" rx="7" fill="#fff" stroke="#cbd5e1"/>
+  <text x="510" y="485" text-anchor="middle" class="b">工具注册中心（MCP + Function Calling）</text>
+  <rect x="670" y="464" width="250" height="34" rx="7" fill="#fff" stroke="#cbd5e1"/>
+  <text x="795" y="485" text-anchor="middle" class="b">执行监控 · 日志 · 快照回放</text>
+  <rect x="940" y="464" width="260" height="34" rx="7" fill="#fff" stroke="#cbd5e1"/>
+  <text x="1070" y="485" text-anchor="middle" class="b">验证器 · 规则校验（阈值 7.0）</text>
+
+  <!-- 箭头 L3→质量闭环 -->
+  <path d="M585 414 L585 528" stroke="#22c55e" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="597" y="470" class="edge-label">成品产出</text>
+
+  <!-- ══════ 质量闭环 ══════ -->
+  <rect x="60" y="530" width="1160" height="104" rx="12" fill="#fdf2f8" stroke="#ec4899" stroke-width="2"/>
+  <text x="80" y="554" class="layer" fill="#be185d">质量闭环 · 三轮交叉审核循环（PDCA Self-Loop）</text>
+  <!-- 循环节点 -->
+  <rect x="100" y="566" width="240" height="52" rx="8" fill="#fff" stroke="#f9a8d4"/>
+  <text x="220" y="586" text-anchor="middle" class="b">① 成品轮流审核一轮</text>
+  <text x="220" y="604" text-anchor="middle" class="s">各 Agent 交叉评审 + 打分</text>
+  <path d="M340 592 L388 592" stroke="#ec4899" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="390" y="566" width="240" height="52" rx="8" fill="#fff" stroke="#f9a8d4"/>
+  <text x="510" y="586" text-anchor="middle" class="b">② 建议 Agent 提出方案</text>
+  <text x="510" y="604" text-anchor="middle" class="s">针对问题给解决方案</text>
+  <path d="M630 592 L678 592" stroke="#ec4899" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="680" y="566" width="240" height="52" rx="8" fill="#fff" stroke="#f9a8d4"/>
+  <text x="800" y="586" text-anchor="middle" class="b">③ 主负责 Agent 审议</text>
+  <text x="800" y="604" text-anchor="middle" class="s">≥阈值提前通过 · 否则重复三轮</text>
+  <path d="M920 592 L968 592" stroke="#ec4899" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="970" y="566" width="230" height="52" rx="8" fill="#fff" stroke="#f9a8d4"/>
+  <text x="1085" y="586" text-anchor="middle" class="b">④ 总控「一锤定音」</text>
+  <text x="1085" y="604" text-anchor="middle" class="s">DeepSeek 审查 → 归档分类</text>
+  <!-- 回环箭头 -->
+  <path d="M800 618 L800 646 Q800 660 786 660 L228 660 Q214 660 214 646 L214 618"
+        fill="none" stroke="#ec4899" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <text x="512" y="655" text-anchor="middle" class="tiny">不通过 → 携带评审意见返回修正（最多 3 轮）</text>
+
+  <!-- ══════ 右侧 数据流说明 ══════ -->
+  <rect x="60" y="660" width="1160" height="80" rx="12" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="80" y="684" class="layer" fill="#475569">设计要点</text>
+  <text x="80" y="706" class="s">① 职能隔离：各 Agent 只干本职、不插手实质工作，统一 API 管理防止越权与混乱</text>
+  <text x="80" y="726" class="s">② 容错机制：运维 Agent 停滞时由备用顶替，故障上报总控后总结归档，避免单点瘫痪</text>
+  <text x="660" y="706" class="s">③ 动态分配：69%/30%/1% 为初始经验参数，随能力画像（成功率/耗时/成本/负载）动态调整</text>
+  <text x="660" y="726" class="s">④ 量化裁决：审核评分 ≥ 阈值（7.0）提前通过，总控定音以规则校验兜底，避免纯主观裁决</text>
+</svg>

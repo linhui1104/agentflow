@@ -1,0 +1,10 @@
+# 含 API Key 的本地配置（用户自己填入，绝不提交）
+backend/data/providers.json
+backend/data/runs/
+backend/data/kb/*.json
+__pycache__/
+*.pyc
+venv/
+node_modules/
+dist/
+frontend/.vite/

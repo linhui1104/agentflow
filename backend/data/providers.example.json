@@ -1,0 +1,53 @@
+{
+  "deepseek": {
+    "label": "DeepSeek",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "api_key": "在此填入你的API Key",
+    "enabled": true
+  },
+  "glm": {
+    "label": "GLM 智谱",
+    "base_url": "https://open.bigmodel.cn/api/paas/v4",
+    "model": "glm-4-flash",
+    "image_model": "cogview-3-flash",
+    "api_key": "",
+    "enabled": false
+  },
+  "doubao": {
+    "label": "豆包·火山方舟",
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "model": "doubao-1.5-vision-pro-32k-250115",
+    "image_model": "在此填入你的Seedream接入点ID(ep-xxx)",
+    "api_key": "",
+    "enabled": false
+  },
+  "kimi": {
+    "label": "Kimi Moonshot",
+    "base_url": "https://api.moonshot.cn/v1",
+    "model": "moonshot-v1-8k",
+    "api_key": "",
+    "enabled": false
+  },
+  "qwen": {
+    "label": "通义千问",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "model": "qwen-plus",
+    "api_key": "",
+    "enabled": false
+  },
+  "ernie": {
+    "label": "文心一言",
+    "base_url": "https://qianfan.baidubce.com/v2",
+    "model": "ernie-4.0-8k",
+    "api_key": "",
+    "enabled": false
+  },
+  "minimax": {
+    "label": "MiniMax",
+    "base_url": "https://api.minimax.chat/v1",
+    "model": "abab6.5s-chat",
+    "api_key": "",
+    "enabled": false
+  }
+}

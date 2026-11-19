@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620">
+  <defs>
+    <style>
+      text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .title { font-size: 22px; font-weight: bold; fill: #1e293b; }
+      .layer-label { font-size: 13px; font-weight: bold; }
+      .box { rx: 10; }
+      .box-text { font-size: 13px; fill: #1e293b; }
+      .box-sub { font-size: 10.5px; fill: #64748b; }
+      .star { fill: #f59e0b; font-weight: bold; }
+    </style>
+  </defs>
+  <rect width="960" height="620" fill="#ffffff"/>
+
+  <text x="480" y="36" text-anchor="middle" class="title">AgentFlow 多智能体编排平台 · 总体架构</text>
+
+  <!-- L1 表现层 -->
+  <rect x="40" y="56" width="880" height="92" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="56" y="80" class="layer-label" fill="#4338ca">L1 表现层 · Vue3 + Vue Flow</text>
+  <rect x="70" y="92" width="250" height="42" rx="8" fill="#fff" stroke="#c7d2fe"/>
+  <text x="195" y="110" text-anchor="middle" class="box-text">可视化工作流设计器</text>
+  <text x="195" y="126" text-anchor="middle" class="box-sub">拖拽DAG · 分支 · 循环 · 子流程</text>
+  <rect x="350" y="92" width="250" height="42" rx="8" fill="#fff" stroke="#c7d2fe"/>
+  <text x="475" y="110" text-anchor="middle" class="box-text">运行监控面板</text>
+  <text x="475" y="126" text-anchor="middle" class="box-sub">实时状态 · 日志流 · 回放</text>
+  <rect x="630" y="92" width="260" height="42" rx="8" fill="#fff" stroke="#c7d2fe"/>
+  <text x="760" y="110" text-anchor="middle" class="box-text">Agent 管理台</text>
+  <text x="760" y="126" text-anchor="middle" class="box-sub">团队 · 能力画像 · 版本</text>
+
+  <!-- L2 API -->
+  <rect x="40" y="160" width="880" height="58" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="56" y="184" class="layer-label" fill="#15803d">L2 API 层 · FastAPI</text>
+  <text x="56" y="204" class="box-sub">REST（agents / workflows / runs / scheduler）+ WebSocket（执行状态实时推送）</text>
+
+  <!-- L3 编排层 -->
+  <rect x="40" y="230" width="880" height="150" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="56" y="254" class="layer-label" fill="#b45309">L3 编排层 <tspan class="star">★ 自研核心（赛题创新点）</tspan></text>
+  <rect x="70" y="268" width="185" height="44" rx="8" fill="#fff" stroke="#fcd34d"/>
+  <text x="162" y="286" text-anchor="middle" class="box-text">工作流引擎</text>
+  <text x="162" y="302" text-anchor="middle" class="box-sub">DAG解析 · 拓扑执行</text>
+  <rect x="270" y="268" width="185" height="44" rx="8" fill="#fff" stroke="#fcd34d"/>
+  <text x="362" y="286" text-anchor="middle" class="box-text star">智能调度器 ★</text>
+  <text x="362" y="302" text-anchor="middle" class="box-sub">能力画像 · 优先级 · 负载均衡</text>
+  <rect x="470" y="268" width="185" height="44" rx="8" fill="#fff" stroke="#fcd34d"/>
+  <text x="562" y="286" text-anchor="middle" class="box-text star">交叉验证器 ★</text>
+  <text x="562" y="302" text-anchor="middle" class="box-sub">双通道置信度评估</text>
+  <rect x="670" y="268" width="215" height="44" rx="8" fill="#fff" stroke="#fcd34d"/>
+  <text x="777" y="286" text-anchor="middle" class="box-text star">Self-Loop 引擎 ★</text>
+  <text x="777" y="302" text-anchor="middle" class="box-sub">PDCA 循环 · Prompt 自适应</text>
+  <rect x="70" y="324" width="815" height="40" rx="8" fill="#fff" stroke="#fcd34d"/>
+  <text x="477" y="341" text-anchor="middle" class="box-text">执行监控与快照回放（全链路日志 · 状态快照 · 可复现）</text>
+  <text x="477" y="356" text-anchor="middle" class="box-sub">执行-验证-修正 循环贯通上四模块</text>
+
+  <!-- L4 执行层 -->
+  <rect x="40" y="392" width="880" height="58" rx="10" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="56" y="416" class="layer-label" fill="#0369a1">L4 Agent 执行层 · openai-agents SDK（MIT 开源底座）</text>
+  <text x="56" y="436" class="box-sub">Agent 定义 · Handoffs 交接 · Guardrails 校验 · Sessions 会话 · 动态注册与版本管理</text>
+
+  <!-- L5 基础层 -->
+  <rect x="40" y="462" width="880" height="70" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="56" y="486" class="layer-label" fill="#475569">L5 基础能力层</text>
+  <rect x="70" y="496" width="240" height="28" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <text x="190" y="515" text-anchor="middle" class="box-sub">LLM 网关（DeepSeek / GLM 多 provider）</text>
+  <rect x="330" y="496" width="240" height="28" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <text x="450" y="515" text-anchor="middle" class="box-sub">工具集（MCP / Function Calling）</text>
+  <rect x="590" y="496" width="300" height="28" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <text x="740" y="515" text-anchor="middle" class="box-sub">知识库 RAG · 记忆管理 · 快照存储</text>
+
+  <!-- 箭头 -->
+  <path d="M480 148 L480 160" stroke="#64748b" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M480 218 L480 230" stroke="#64748b" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M480 380 L480 392" stroke="#64748b" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M480 450 L480 462" stroke="#64748b" stroke-width="2" marker-end="url(#a)"/>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- 底部数据流说明 -->
+  <text x="480" y="560" text-anchor="middle" class="box-sub">核心数据流：编排 JSON → 引擎拓扑排序 → 调度器择优分配 → Agent 执行 → 交叉验证 → 不通过触发 Self-Loop 修正 → 快照回放</text>
+  <text x="480" y="582" text-anchor="middle" class="box-sub">★ = 自研创新模块（能力画像调度 / 双通道交叉验证 / PDCA Self-Loop），对标 DeepSeek Harness / LobeHub 补强三大短板</text>
+</svg>

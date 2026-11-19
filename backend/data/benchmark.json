@@ -1,0 +1,216 @@
+{
+  "serial_single": {
+    "strategy": "serial_single",
+    "tasks": 6,
+    "total_elapsed": 32.0,
+    "avg_elapsed": 4.1,
+    "success_rate": 1.0,
+    "avg_score": 8.83,
+    "writer_a_ratio": 1.0,
+    "records": [
+      {
+        "task": "写一篇大学生时间管理推文（300字以",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 3.7,
+        "score": 9.3,
+        "passed": true,
+        "output_len": 587
+      },
+      {
+        "task": "写一篇考研复试经验推文（300字以上",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 4.2,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 734
+      },
+      {
+        "task": "写一篇宿舍关系处理推文（300字以上",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 4.5,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 709
+      },
+      {
+        "task": "写一篇实习面试技巧推文（300字以上",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 3.8,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 677
+      },
+      {
+        "task": "写一篇四六级备考攻略推文（300字以",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 4.0,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 647
+      },
+      {
+        "task": "写一篇大学生理财入门推文（300字以",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 4.2,
+        "score": 9.3,
+        "passed": true,
+        "output_len": 801
+      }
+    ]
+  },
+  "round_robin": {
+    "strategy": "round_robin",
+    "tasks": 6,
+    "total_elapsed": 60.8,
+    "avg_elapsed": 8.5,
+    "success_rate": 1.0,
+    "avg_score": 8.48,
+    "writer_a_ratio": 0.5,
+    "records": [
+      {
+        "task": "写一篇大学生时间管理推文（300字以",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 3.3,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 551
+      },
+      {
+        "task": "写一篇考研复试经验推文（300字以上",
+        "agent": "writer-b",
+        "ok": true,
+        "elapsed": 14.2,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 637
+      },
+      {
+        "task": "写一篇宿舍关系处理推文（300字以上",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 4.7,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 785
+      },
+      {
+        "task": "写一篇实习面试技巧推文（300字以上",
+        "agent": "writer-b",
+        "ok": true,
+        "elapsed": 12.2,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 554
+      },
+      {
+        "task": "写一篇四六级备考攻略推文（300字以",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 5.6,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 872
+      },
+      {
+        "task": "写一篇大学生理财入门推文（300字以",
+        "agent": "writer-b",
+        "ok": true,
+        "elapsed": 11.2,
+        "score": 7.9,
+        "passed": true,
+        "output_len": 454
+      }
+    ]
+  },
+  "capability": {
+    "strategy": "capability",
+    "tasks": 6,
+    "total_elapsed": 34.1,
+    "avg_elapsed": 4.4,
+    "success_rate": 1.0,
+    "avg_score": 8.6,
+    "writer_a_ratio": 1.0,
+    "records": [
+      {
+        "task": "写一篇大学生时间管理推文（300字以",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 3.2,
+        "score": 7.9,
+        "passed": true,
+        "output_len": 412
+      },
+      {
+        "task": "写一篇考研复试经验推文（300字以上",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 5.0,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 797
+      },
+      {
+        "task": "写一篇宿舍关系处理推文（300字以上",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 3.8,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 557
+      },
+      {
+        "task": "写一篇实习面试技巧推文（300字以上",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 5.2,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 926
+      },
+      {
+        "task": "写一篇四六级备考攻略推文（300字以",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 4.9,
+        "score": 8.6,
+        "passed": true,
+        "output_len": 806
+      },
+      {
+        "task": "写一篇大学生理财入门推文（300字以",
+        "agent": "writer-a",
+        "ok": true,
+        "elapsed": 4.5,
+        "score": 9.3,
+        "passed": true,
+        "output_len": 623
+      }
+    ]
+  },
+  "concurrent": {
+    "mode": "concurrent",
+    "tasks": 8,
+    "concurrent_elapsed": 16.2,
+    "serial_elapsed": 45.3,
+    "speedup": 2.8,
+    "peak_load": 4,
+    "chosen": [
+      "writer-a",
+      "writer-b",
+      "writer-a",
+      "writer-b",
+      "writer-a",
+      "writer-a",
+      "writer-a",
+      "writer-a"
+    ],
+    "pass_rate": 1.0
+  }
+}
