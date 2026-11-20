@@ -3,6 +3,8 @@
 > 第五届"未来杯"创新大赛 · 赛题一（Agent 编排创新应用）
 > 面向多智能体协作的「编排-调度-执行-验证」一体化平台
 
+**评审复现指南**：[REPRODUCTION.md](./REPRODUCTION.md)（10 分钟从零部署+体验+数据复现）
+
 ![架构](docs/architecture.png)
 
 ## 项目简介
